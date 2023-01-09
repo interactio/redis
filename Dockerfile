@@ -19,4 +19,9 @@ RUN . $HOME/.cargo/env && \
 
 FROM redis:$REDIS_VERSION
 
+LABEL org.opencontainers.image.vendor="Interactio" \
+      org.opencontainers.image.title="redis"
+
 COPY --from=build /RedisJSON/bin/linux-*-release/rejson.so /usr/local/lib
+
+CMD [ "redis-server", "--loadmodule", "/usr/local/lib/rejson.so" ]
