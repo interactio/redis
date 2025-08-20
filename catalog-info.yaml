@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: redis
+  annotations:
+    github.com/project-slug: interactio/redis
+  labels:
+    co-owner: mantas.totilas
+spec:
+  type: service
+  lifecycle: production
+  owner: user:default/audrius.rutkus
